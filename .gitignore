@@ -2,5 +2,3 @@ build/*
 out/*
 non-essential-docs/*
 .vs/*
-src/.vs
-src/out
