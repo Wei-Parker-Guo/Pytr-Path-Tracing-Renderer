@@ -11,6 +11,10 @@
 
 int main(int argc, char *argv[]){
     
+    //***********************************
+    //APPLICATION SETUP
+    //***********************************
+
     using namespace ultralight;
     //create main app
     Ref<App> main_app = App::Create();
@@ -28,6 +32,12 @@ int main(int argc, char *argv[]){
     Ref<Overlay> overlay = Overlay::Create(main_window, main_window->width(), main_window->height(), 0, 0);
     ////specify overlay to to read from our homepage html
     overlay->view()->LoadHTML(read_html_file(INDEX_HTML).data());
+
+
+    //***********************************
+    //APPLICATION RUN
+    //***********************************
+
     //run
     main_app->Run();
 

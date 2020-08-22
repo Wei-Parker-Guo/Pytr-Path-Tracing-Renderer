@@ -26,7 +26,7 @@ string read_html_file(const char* file_name) {
 }
 
 const char* VERSION_NAME = "Malenchenko(v1.0)";
-const char* INDEX_HTML = "index.html";
+const char* INDEX_HTML = "assets/index.html";
 
 
 #endif // !GLOBAL_INFO_H

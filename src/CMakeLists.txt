@@ -81,3 +81,6 @@ install(TARGETS pytr DESTINATION ${PYTR_SOURCE_DIR})
 add_custom_command(TARGET pytr POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/Ultralight/bin ${CMAKE_SOURCE_DIR}/out/build)  
 
+# Copy all assets to target directory
+add_custom_command(TARGET pytr POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/src/assets ${CMAKE_SOURCE_DIR}/out/build/assets)  
