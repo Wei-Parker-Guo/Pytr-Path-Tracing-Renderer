@@ -14,6 +14,8 @@ using namespace ultralight;
 
 //app instance
 class MyApp {
+public:
+    //view instances
     RefPtr<Overlay> overlay_;
     RefPtr<Overlay> inspec_overlay;
 public:
@@ -41,6 +43,29 @@ public:
     virtual ~MyApp() {}
 };
 
+//Window resize event listener, enables an overlay in the window to resize dynamically
+class ResizeWindowListener : public WindowListener {
+public:
+    //minimal width/height to shrink to
+    uint32_t min_width;
+    uint32_t min_height;
+    //view instance to apply on
+    RefPtr<Overlay> overlay;
+    ResizeWindowListener(RefPtr<Overlay> o, uint32_t min_width, uint32_t min_height) {
+        this->overlay = o;
+        this->min_width = min_width;
+        this->min_height = min_height;
+    }
+
+    void OnClose() override {
+
+    }
+
+    void OnResize(uint32_t width, uint32_t height) override {
+        overlay.get()->Resize(max(min_width, width), max(min_height, height));
+    }
+};
+
 int main(int argc, char *argv[]){
     
     //***********************************
@@ -51,8 +76,8 @@ int main(int argc, char *argv[]){
     auto main_app = App::Create();
     //create main window to fit as a fullscreen resolution size
     Monitor* main_monitor = main_app->main_monitor();
-    auto main_window = Window::Create(main_monitor, main_monitor->width() / main_monitor->scale() / 1.3,
-        main_monitor->height() / main_monitor->scale() / 1.3, false, kWindowFlags_Titled|kWindowFlags_Resizable|kWindowFlags_Maximizable);
+    auto main_window = Window::Create(main_monitor, floor(main_monitor->width() / main_monitor->scale() / 1.3),
+        floor(main_monitor->height() / main_monitor->scale() / 1.3), false, kWindowFlags_Titled | kWindowFlags_Resizable | kWindowFlags_Maximizable);
     //set title of this window
     char title_buf[64];
     sprintf_s(title_buf, "Pytr Renderer [%s]", VERSION_NAME);
@@ -61,7 +86,9 @@ int main(int argc, char *argv[]){
     main_app->set_window(main_window);
     //create myapp instance
     MyApp my_app(main_window);
-
+    //set up resize listener for main contents
+    ResizeWindowListener* main_wind_listener = new ResizeWindowListener(my_app.overlay_, main_window->width() / 2, main_window->height() / 2);
+    main_window->set_listener(main_wind_listener);
 
     //***********************************
     //APPLICATION RUN
