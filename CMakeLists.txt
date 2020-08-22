@@ -133,8 +133,8 @@ add_subdirectory(assimp-5.0.1)
 include_directories(assimp-5.0.1/include)
 
 # ultralight
-add_subdirectory(ultralight)
-include_directories(ultralight/include)
+add_subdirectory(Ultralight)
+include_directories(Ultralight/include)
 
 #-------------------------------------------------------------------------------
 # Add subdirectories

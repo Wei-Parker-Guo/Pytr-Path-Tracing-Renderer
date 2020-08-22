@@ -2,3 +2,4 @@ build/*
 out/*
 non-essential-docs/*
 .vs/*
+.DS_Store
