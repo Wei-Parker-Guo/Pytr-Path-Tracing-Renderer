@@ -77,7 +77,7 @@ int main(int argc, char *argv[]){
     //create main window to fit as a fullscreen resolution size
     Monitor* main_monitor = main_app->main_monitor();
     auto main_window = Window::Create(main_monitor, floor(main_monitor->width() / main_monitor->scale() / 1.3),
-        floor(main_monitor->height() / main_monitor->scale() / 1.3), false, kWindowFlags_Titled | kWindowFlags_Resizable | kWindowFlags_Maximizable);
+        floor(main_monitor->height() / main_monitor->scale() / 1.3), false, kWindowFlags_Borderless);
     //set title of this window
     char title_buf[64];
     sprintf_s(title_buf, "Pytr Renderer [%s]", VERSION_NAME);
