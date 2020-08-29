@@ -2,12 +2,16 @@ body {
 	padding-top: 3.5rem;
 }
 
+.justify-p {
+	text-align: justify;
+}
+
 h1, h2, h3, h4 {
 	color: white;
 }
 
 .quickstart {
-	padding-top: 7rem;
+	padding-top: 3.5rem;
 	padding-bottom: 3.5rem;
 }
 
@@ -63,4 +67,15 @@ h1, h2, h3, h4 {
 .center-msg-box {
 	padding-top: 10.5rem;
 	text-align: center;
+}
+
+.center-align {
+	align-content: center;
+	margin: auto;
+}
+
+.prof-icon {
+	border-radius: 10px;
+	opacity: 0.9;
+	box-shadow: 5px 5px 8px #030303;
 }
