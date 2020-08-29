@@ -68,16 +68,16 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form> -->
-    <svg width="1.25rem" height="1.25rem" viewBox="0 0 16 16" class="reactive-icon bi bi-dash-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg width="1.25rem" onclick="FireEvent('Minimize')" height="1.25rem" viewBox="0 0 16 16" class="reactive-icon bi bi-dash-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
       <path fill-rule="evenodd" d="M3.5 8a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.5-.5z"/>
     </svg>
     &nbsp;&nbsp;&nbsp;
-    <svg width="1.25rem" height="1.25rem" viewBox="0 0 16 16" class="reactive-icon bi bi-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg width="1.25rem" onclick="FireEvent('FullScr')" height="1.25rem" viewBox="0 0 16 16" class="reactive-icon bi bi-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
     </svg>
     &nbsp;&nbsp;&nbsp;
-    <svg width="1.5rem" height="1.5rem" viewBox="0 0 16 16" class="reactive-icon bi bi-power" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <svg width="1.5rem" onclick="FireEvent('ShutDown')" height="1.5rem" viewBox="0 0 16 16" class="reactive-icon bi bi-power" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"/>
       <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z"/>
     </svg>
@@ -107,4 +107,5 @@
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/EventLogger.js"></script>
 </html>

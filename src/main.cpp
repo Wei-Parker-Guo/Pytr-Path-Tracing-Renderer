@@ -5,7 +5,6 @@
 
 //UI Pipeline (Ultralight HTML Engine)
 #include <AppCore/Monitor.h>
-#include <AppCore/JSHelpers.h>
 #include "ui_classes.h"
 
 using namespace ultralight;
@@ -23,12 +22,12 @@ void app_create(Ref<App>& main_app) {
     //set window to app
     main_app->set_window(main_window);
     //create myapp instance
-    MyApp my_app(main_window);
+    MyApp* my_app = new MyApp(main_window);
     //set up resize listener for main contents
-    ResizeWindowListener* main_wind_listener = new ResizeWindowListener(my_app.overlay_, main_window->width() / 2, main_window->height() / 2);
+    ResizeWindowListener* main_wind_listener = new ResizeWindowListener(my_app->overlay_, main_window->width() / 2, main_window->height() / 2);
     main_window->set_listener(main_wind_listener);
     //set up listener for the whole app
-    MainAppListener* main_app_listener = new MainAppListener();
+    MainAppListener* main_app_listener = new MainAppListener(&main_app, my_app);
     main_app->set_listener(main_app_listener);
 }
 
