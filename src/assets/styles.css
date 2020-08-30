@@ -24,7 +24,7 @@ h1, h2, h3, h4 {
 	background-size: 300% 100%;
 	color: rgba(255, 255, 255, 0.9);
 	text-decoration-color: rgba(255, 255, 255, 0.9);
-	animation: gradient-move ease 60s infinite;
+	animation: gradient-move ease 30s infinite;
 }
 
 @keyframes gradient-move {
@@ -71,6 +71,12 @@ h1, h2, h3, h4 {
 
 .center-align {
 	align-content: center;
+	margin: auto;
+}
+
+.left-align {
+	text-align: right;
+	align-content: right;
 	margin: auto;
 }
 

@@ -65,6 +65,19 @@ public:
     virtual ~MyApp() {}
 };
 
+//enum class for non-general event types
+enum class JSEvent
+{
+    refresh_page,
+    undefined
+};
+
+//function to determine a non-general event
+JSEvent get_event_type(const char* raw) {
+    if (strcmp("RefreshPage", raw) == 0) return JSEvent::refresh_page;
+    else return JSEvent::undefined;
+}
+
 //listener for the entire app
 class MainAppListener : public AppListener {
 public:
@@ -74,6 +87,20 @@ public:
     MainAppListener(Ref<App>* main_app, MyApp* app) {
         this->main_app = main_app;
         this->app = app;
+    }
+
+    //function to execute different events from JS results
+    void execute_event(const char* event) {
+        switch (get_event_type(event))
+        {
+        case JSEvent::refresh_page:
+            app->overlay_->view()->Reload();
+            break;
+        case JSEvent::undefined:
+            break;
+        default:
+            break;
+        }
     }
 
     //************************************
@@ -112,6 +139,11 @@ public:
                     else if (strcmp(event.utf8().data(), "Minimize") == 0) {
                         HWND window = (HWND)main_app->get().window()->native_handle();
                         ShowWindow(window, SW_MINIMIZE);
+                    }
+
+                    //other non-general cases for left for our own handler logic
+                    else {
+                        execute_event(event.utf8().data());
                     }
                 }
             }

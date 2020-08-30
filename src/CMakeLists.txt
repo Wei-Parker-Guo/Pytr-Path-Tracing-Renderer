@@ -7,6 +7,7 @@ set(PYTR_CPU_SOURCE
     "shaders/translucent_shader.cpp"
     "shaders/layered_toon_shader.cpp"
     "shaders/basic_shaders.cpp"
+    global_info.cpp
     fast_math.cpp
     main.cpp
 )

@@ -17,7 +17,7 @@ void app_create(Ref<App>& main_app) {
         floor(main_monitor->height() / main_monitor->scale() / 1.3), false, kWindowFlags_Borderless);
     //set title of this window
     char title_buf[64];
-    sprintf_s(title_buf, "Pytr Renderer [%s]", VERSION_NAME);
+    sprintf_s(title_buf, "Pytr Renderer [%s]", GlobalConfig::VERSION_NAME);
     main_window->SetTitle(title_buf);
     //set window to app
     main_app->set_window(main_window);
