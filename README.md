@@ -1,5 +1,5 @@
 # Pytr - A Path Tracing Renderer
-Pytr is a cross-platform path tracing renderer that could be configured to run on both CPU and Nvidia GPU. Its framework APIs are designed to be as volatile as possible to work with most C++ projects, supporting a real-time progressive UI/UX.
+Pytr is a cross-platform path tracing renderer that could be configured to run on both CPU and Nvidia GPU. Its framework APIs are designed to be as versatile as possible to work with most C++ projects, supporting a real-time progressive UI/UX.
 
 author: Wei Guo wei.parker.guo.sg@gmail.com
 Date Initiated: 2020-08-20
